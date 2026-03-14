@@ -1,4 +1,3 @@
-
 # E-Commerce Sales Analysis using Power BI
 
 ![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
@@ -7,19 +6,26 @@
 
 ## Project Overview
 
-An interactive Power BI dashboard built to analyse e-commerce sales data from platforms like **Flipkart**, **Amazon**, and **Meesho**. The dashboard consolidates over 1,00,000+ order records and provides actionable business insights through interactive visualisations.
+An interactive Power BI dashboard built to analyse e-commerce sales data from platforms like **Flipkart**, **Amazon**, and **Meesho**. The dashboard consolidates over 1,00,000+ order records and provides actionable business insights through 5 interactive report pages.
 
 ---
 
-## Problem Statement
+## Dashboard Screenshots
 
-The Indian e-commerce industry generates millions of transactions daily but businesses struggle to derive timely insights from raw data. Decision-makers face challenges in identifying top-selling categories, understanding regional trends, tracking delivery performance, and monitoring return rates. This project addresses that gap with a unified Power BI dashboard.
+### Page 1 — Overview
+![Overview](ss_overview.png)
 
----
+### Page 2 — Category Analysis
+![Category Analysis](ss_category.png)
 
-## Dashboard Preview
+### Page 3 — Regional Map
+![Regional Map](ss_regional.png)
 
-![Dashboard Preview](dashboard_screenshot.png)
+### Page 4 — Delivery Performance
+![Delivery Performance](ss_delivery.png)
+
+### Page 5 — Customer & Sales Insights
+![Customer Insights](ss_customer.png)
 
 ---
 
@@ -34,15 +40,18 @@ The Indian e-commerce industry generates millions of transactions daily but busi
 | Avg Delivery Time | 4.2 days |
 | Peak Sales Period | October–November (Diwali) — 3.2x spike |
 | Top States | Maharashtra, Karnataka, Delhi (45% of orders) |
+| On-Time Delivery | 84.6% |
+| Customer Rating | 3.9 / 5.0 |
 
 ---
 
 ## Dashboard Pages
 
-1. **Overview** — KPI cards, monthly revenue trend, category split
-2. **Category Analysis** — Revenue and return rate by product category
-3. **Regional Map** — State-wise order distribution across India
-4. **Delivery Performance** — Average delivery days by region and platform
+1. **Overview** — KPI cards, monthly revenue trend, category split, top states, platform split
+2. **Category Analysis** — Revenue, orders, avg order value, profit margin, return rates per category
+3. **Regional Map** — State-wise order bubble map, zone split, metro vs non-metro analysis
+4. **Delivery Performance** — Delivery trends, city-tier analysis, platform on-time rates, scorecard
+5. **Customer & Sales Insights** — Ratings, repeat customers, payment modes, discount impact
 
 ---
 
@@ -65,22 +74,16 @@ The Indian e-commerce industry generates millions of transactions daily but busi
 Total Revenue = SUMX(Orders, Orders[Quantity] * Orders[Unit Price])
 
 -- Month-over-Month Growth
-MoM Growth = 
-DIVIDE(
-    [Current Month Revenue] - [Prev Month Revenue],
-    [Prev Month Revenue]
-)
+MoM Growth = DIVIDE([Current Month Revenue] - [Prev Month Revenue], [Prev Month Revenue])
 
 -- Return Rate
-Return Rate % = 
-DIVIDE(
-    COUNTROWS(FILTER(Orders, Orders[Status] = "Returned")),
-    COUNTROWS(Orders)
-) * 100
+Return Rate % = DIVIDE(COUNTROWS(FILTER(Orders, Orders[Status] = "Returned")), COUNTROWS(Orders)) * 100
 
 -- Average Delivery Days
-Avg Delivery Days = 
-AVERAGEX(Orders, DATEDIFF(Orders[Order Date], Orders[Delivery Date], DAY))
+Avg Delivery Days = AVERAGEX(Orders, DATEDIFF(Orders[Order Date], Orders[Delivery Date], DAY))
+
+-- On-Time Delivery Rate
+On Time % = DIVIDE(COUNTROWS(FILTER(Orders, Orders[Delivery Days] <= 5)), COUNTROWS(Orders)) * 100
 ```
 
 ---
@@ -99,15 +102,13 @@ ORDERS (Fact Table)
 
 ## Project Report
 
-The full project report (PPT converted to PDF) is included in this repository.
-
-📄 [View Project Report (PDF)](ecommerce_powerbi_project.pdf)
+📄 [View Full Project Report (PDF)](ecommerce_powerbi_project.pdf)
 
 ---
 
 ## References
 
-1. Microsoft Corporation. (2024). Power BI Documentation. https://learn.microsoft.com/en-us/power-bi/
+1. Microsoft Corporation. (2024). Power BI Documentation. [https://learn.microsoft.com/en-us/power-bi/](https://learn.microsoft.com/en-us/power-bi/)
 2. Kaggle Inc. (2023). E-Commerce Sales Dataset. [https://www.kaggle.com/datasets/ecommerce-sales-data](https://www.kaggle.com/datasets/thedevastator/unlock-profits-with-e-commerce-sales-data)
 3. Ferrari, A., & Russo, M. (2019). The Definitive Guide to DAX. Microsoft Press.
 4. NASSCOM. (2023). Indian E-Commerce Industry Report.
@@ -120,8 +121,8 @@ The full project report (PPT converted to PDF) is included in this repository.
 - **Program:** Microsoft Elevate — AICTE Internship (Feb 2026)
 - **Topic:** E-Commerce Sales Analysis using Power BI
 - **Submitted by:** Lucky Sharma
-- **Institution:** Kalinga Institute of Industrial Technology
-- **Department:** Computer Science & Engineering
+- **Institution:** KIIT University
+- **GitHub:** https://github.com/luckysharma06102004-stack/ecommerce-powerbi-dashboard
 
 ---
 

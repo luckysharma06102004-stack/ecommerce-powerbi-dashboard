@@ -102,7 +102,7 @@ ORDERS (Fact Table)
 
 ## Project Report
 
-📄 [View Full Project Report (PDF)](ecommerce_powerbi_project.pdf)
+📄 [View Full Project Report (PDF)](PowerBI_project_By_Lucky_Sharma.pdf)
 
 ---
 

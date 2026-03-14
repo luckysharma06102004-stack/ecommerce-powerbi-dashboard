@@ -108,7 +108,7 @@ The full project report (PPT converted to PDF) is included in this repository.
 ## References
 
 1. Microsoft Corporation. (2024). Power BI Documentation. https://learn.microsoft.com/en-us/power-bi/
-2. Kaggle Inc. (2023). E-Commerce Sales Dataset. https://www.kaggle.com/datasets/ecommerce-sales-data
+2. Kaggle Inc. (2023). E-Commerce Sales Dataset. [https://www.kaggle.com/datasets/ecommerce-sales-data](https://www.kaggle.com/datasets/thedevastator/unlock-profits-with-e-commerce-sales-data)
 3. Ferrari, A., & Russo, M. (2019). The Definitive Guide to DAX. Microsoft Press.
 4. NASSCOM. (2023). Indian E-Commerce Industry Report.
 5. Kimball, R., & Ross, M. (2013). The Data Warehouse Toolkit. Wiley.
